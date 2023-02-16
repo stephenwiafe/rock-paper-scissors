@@ -1,4 +1,6 @@
 function getPlayerChoice() {
+    const playerChoice = prompt("Enter rock/paper/scissors:", "");
+    return playerChoice;
 }
 
 function getComputerChoice() {
@@ -22,3 +24,5 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 }
+
+console.log(getPlayerChoice());
