@@ -7,18 +7,13 @@ function getComputerChoice() {
 
   const computerChoice = Math.floor((Math.random() * 3));
 
-  switch(computerChoice) {
-    case 0:
-      return "rock";
-      break;
-    case 1:
-      return "paper";
-      break;
-    case 2:
-      return "scissors";
-      break;
-  }
-
+  if(computerChoice === 0) {
+    return "rock";
+  } else if(computerChoice === 1){
+    return "paper";
+  } else {
+    return "scissors";
+  }   
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -39,9 +34,9 @@ function playRound(playerSelection, computerSelection) {
   } else if((playerSelection === "paper" && computerSelectionn === "rock") &&
       ((playerSelection.length() < computerSelection.length()))) {
         return "paper";
-    } else {
+  } else {
       return "tied";
-    }
+  }
 
   if((playerSelection === "scissors" && computerSelection === "rock") &&
     (playerSelection.length() > computerSelection())) {
@@ -57,4 +52,3 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 }
-
