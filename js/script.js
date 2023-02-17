@@ -13,42 +13,35 @@ function getComputerChoice() {
     return "paper";
   } else {
     return "scissors";
-  }   
+  } 
+
 }
 
 function playRound(playerSelection, computerSelection) {
 
   if((playerSelection === "rock" && computerSelection === "scissors") &&
-    (playerSelection.length() < computerSelection.length())) {
-      return playerSelection;
+    (playerSelection < computerSelection)) {
+      return `You Win ${playerSelection} beats ${computerSelection}`;
   } else if((playerSelection === "rock" && computerSelection === "paper") &&
-    (playerSelection.length() > computerSelection.length())) {
-      return "paper";
-  } else {
-    return "tied";
-  }
-
-  if((playerSelection === "paper" && computerSelection === "scissors") &&
-    (playerSelection.length() <  computerSelection.length())) {
-      return computerSelection;
-  } else if((playerSelection === "paper" && computerSelectionn === "rock") &&
-      ((playerSelection.length() < computerSelection.length()))) {
-        return "paper";
-  } else {
-      return "tied";
-  }
-
-  if((playerSelection === "scissors" && computerSelection === "rock") &&
-    (playerSelection.length() > computerSelection())) {
-      return computerSelection;
+    (playerSelection > computerSelection)) {
+      return `You Lose ${computerSelection} beats ${playerSelection}`;
+  } else if((playerSelection === "paper" && computerSelection === "scissors") &&
+    (playerSelection <  computerSelection)) {
+      return `You Lose ${computerSelection} beats ${playerSelection}`;
+  } else if((playerSelection === "paper" && computerSelection === "rock") &&
+      (playerSelection < computerSelection)) {
+        return `You Win ${playerSelection} beats ${computerSelection}`;
+  } else if((playerSelection === "scissors" && computerSelection === "rock") &&
+    (playerSelection > computerSelection)) {
+      return `You Lose ${computerSelection} beats ${playerSelection}`;
   } else if((playerSelection === "scissors" && computerSelection === "paper") &&
-    (playerSelection.length() > computerSelection().length())) {
-      return playerSelection;
+    (playerSelection > computerSelection)) {
+      return `You Win ${playerSelection} beats ${computerSelection}`;
   } else {
-      return "tied"
+    return `Draw ${computerSelection} tied with ${playerSelection}`;
   }
-}
 
+}
 
 function game() {
 }
