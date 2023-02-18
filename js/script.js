@@ -21,8 +21,7 @@ function getComputerChoice() {
 }
 
 function trackScore() {
-
-  console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+  return `Player Score: ${playerScore} Computer Score: ${computerScore}`;
 }
 
 
@@ -62,13 +61,15 @@ function game() {
 
   for(let i = 0; i < 5; i++) {
     console.log(playRound(getPlayerChoice(), getComputerChoice()));
-    trackScore();
+    console.log(trackScore());
   }
 
   if(playerScore > computerScore) {
-    console.log("You won the game!!!");
+    console.log("You Won the game!!!");
+  } else  if(playerScore < computerScore){
+    console.log("You Lose the game!!!");
   } else {
-    console.log("You Lose the game!!!")
+    console.log("Draw!!!");
   }
 }
 
