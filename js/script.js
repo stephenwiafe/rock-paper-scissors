@@ -1,5 +1,5 @@
 let playerScore = 0;
-let computerScore = 0;
+let computerScore = 0; 
 
 function getPlayerChoice() {
   const playerChoice = prompt("Enter rock/paper/scissors:", "");
@@ -17,13 +17,7 @@ function getComputerChoice() {
   } else {
     return "scissors";
   } 
-
 }
-
-function trackScore() {
-  return `Player Score: ${playerScore} Computer Score: ${computerScore}`;
-}
-
 
 function playRound(playerSelection, computerSelection) {
 
@@ -54,22 +48,21 @@ function playRound(playerSelection, computerSelection) {
   } else {
     return `Draw ${computerSelection} tied with ${playerSelection}`;
   }
-
 }
 
-function game() {
+function game() { 
 
   for(let i = 0; i < 5; i++) {
     console.log(playRound(getPlayerChoice(), getComputerChoice()));
-    console.log(trackScore());
+    console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
   }
 
   if(playerScore > computerScore) {
-    console.log("You Won the game!!!");
-  } else  if(playerScore < computerScore){
-    console.log("You Lose the game!!!");
+    console.log("You Win the game!");
+  } else if(playerScore < computerScore){
+    console.log("You Lose the game!");
   } else {
-    console.log("Draw!!!");
+    console.log("It's a tie");
   }
 }
 
