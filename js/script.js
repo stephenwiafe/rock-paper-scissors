@@ -44,6 +44,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+//This is the main code that will be executed first
+
 function game() { 
 
   for(let i = 0; i < 5; i++) {
