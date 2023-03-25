@@ -17,47 +17,46 @@ function playRound(playerSelection, computerSelection) {
   if(playerSelection === "rock") {
     if(computerSelection === "scissors"){
       playerScore++;
-      return `You Win ${playerSelection} beats ${computerSelection}.`;
+      return `You Win! ${playerSelection} beats ${computerSelection}.`;
     } else if(computerSelection === "paper"){
       computerScore++;
-      return `You Lose ${computerSelection} beats ${playerSelection}.`
+      return `You Lose! ${computerSelection} beats ${playerSelection}.`;
     } else {
-      return `It's a tie! ${computerSelection} tied with ${playerSelection}.`
+      return `It's a tie! ${computerSelection} tied with ${playerSelection}.`;
     }
   }
   if(playerSelection === "paper") {
     if(computerSelection === "scissors"){
       computerScore++;
-      return `You Lose ${computerSelection} beats ${playerSelection}.`;
+      return `You Lose! ${computerSelection} beats ${playerSelection}.`;
     } else if(computerSelection === "rock"){
       playerScore++;
-      return `You Win ${playerSelection} beats ${computerSelection}.`
+      return `You Win! ${playerSelection} beats ${computerSelection}.`;
     } else {
-      return `It's a tie! ${playerSelection} tied with ${computerSelection}.`
+      return `It's a tie! ${playerSelection} tied with ${computerSelection}.`; 
     }
   }
   if(playerSelection === "scissors") {
     if(computerSelection === "rock"){
       computerScore++;
-      return `You Lose ${computerSelection} beats ${playerSelection}.`;
+      return `You Lose! ${computerSelection} beats ${playerSelection}.`;
     } else if(computerSelection === "paper"){
       playerScore++;
-      return `You Win ${playerSelection} beats ${computerSelection}.`
+      return `You Win! ${playerSelection} beats ${computerSelection}.`;
     } else {
-      return `It's a tie! ${playerSelection} tied with ${computerSelection}.`
+      return `It's a tie! ${playerSelection} tied with ${computerSelection}.`;
     }
   }
 } 
 
 //This is the main code that will be executed first
 function game() { 
-  
-  for(let i = 0; i < 5; i++) {
-    const playerChoice = prompt("Enter rock/paper/scissors:", "");
+  for(let i = 1; i <= 5; i++) {
+    const playerChoice = prompt("Enter rock/paper/scissors:", "").toLowerCase();
     console.log(playRound(playerChoice, getComputerChoice()));
     console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
   }
-
+  
   if(playerScore > computerScore) {
     console.log("You Win the game!");
   } else if(playerScore < computerScore) {
@@ -67,4 +66,4 @@ function game() {
   }
 }
 
-game();
+game(); 
