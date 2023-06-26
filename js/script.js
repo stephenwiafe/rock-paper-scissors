@@ -51,12 +51,12 @@ function playRound(playerSelection, computerSelection) {
 
 //This is the main code that will be executed first
 function game() { 
-  for(let i = 1; i <= 5; i++) {
+  /*for(let i = 1; i <= 5; i++) {
     const playerChoice = prompt("Enter rock/paper/scissors:", "").toLowerCase();
     console.log(playRound(playerChoice, getComputerChoice()));
     console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
   }
-  
+  */
   if(playerScore > computerScore) {
     console.log("You Win the game!");
   } else if(playerScore < computerScore) {

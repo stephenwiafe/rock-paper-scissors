@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(134, 130, 204);
+    color:rgb(255, 255, 255)
+}
+
+.header{
+    text-align: center;
+    font-size: 60px;
+    font-family: mono;
+    color: rgb(14, 197, 197);
+}
+
+button{
+    size: 50px;
+}
