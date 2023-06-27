@@ -1,15 +1,53 @@
-body{
-    background-color: rgb(134, 130, 204);
-    color:rgb(255, 255, 255)
+body {
+    background-color: rgb(30, 30, 30);
 }
 
-.header{
+.title {
     text-align: center;
     font-size: 60px;
-    font-family: mono;
-    color: rgb(14, 197, 197);
+    font-family: monospace;
+    font-weight: bold;
+    color: rgb(123, 123, 123);
 }
 
-button{
-    size: 50px;
+button {
+    padding: 55px;
+    background-color: rgb(67, 67, 67);
+    font-size: 30px;
+    border-radius: 100px;
+    border: 50px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(109, 255, 240);
+    padding: 120px;
+}
+
+.player {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    color: rgb(255, 44, 44);
+}
+
+.ai {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    color: rgb(21, 48, 251);
+
+}
+
+.score-board {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.selection {
+    display: flex;
+    justify-content: space-evenly;
 }
