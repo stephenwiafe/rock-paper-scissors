@@ -11,7 +11,7 @@ body {
 }
 
 button {
-    padding: 55px;
+    padding: 45px;
     background-color: rgb(67, 67, 67);
     font-size: 30px;
     border-radius: 100px;
@@ -20,7 +20,7 @@ button {
 
 .main-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     color: rgb(109, 255, 240);
     padding: 120px;
 }
@@ -43,11 +43,24 @@ button {
 .score-board {
     font-size: 50px;
     font-weight: bold;
-    color: white;
+    font-family:'Courier New', Courier, monospace;
+    background-color: rgb(67, 67, 67);
     text-align: center;
+    border-style: outset;
+    border-radius: 25px;
+    color: white;
+    padding: 15px 30px;
+    border: 0;
+    margin: 0;
 }
 
 .selection {
     display: flex;
     justify-content: space-evenly;
+}
+
+.score {
+    border-bottom-style: outset;
+    border-top-style: outset;
+    color: rgb(255, 255, 255);
 }
