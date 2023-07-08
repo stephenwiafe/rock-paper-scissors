@@ -49,6 +49,12 @@ function playRound(playerSelection, computerSelection) {
   }
 } 
 
+function scoreBoard(){
+  const score = document.querySelector('.score');
+  const message = document.querySelector('.message');
+  score.textContent = `${playerScore}:${computerScore}`;
+}
+
 //main
 function game() { 
   const buttons = document.querySelectorAll('button');
@@ -58,14 +64,17 @@ function game() {
       if(e.target.id === 'rock'){
         console.log(playRound(e.target.id, getComputerChoice()));
         console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+        scoreBoard();
       }
       else if(e.target.id === 'paper'){
         console.log(playRound(e.target.id, getComputerChoice()));
         console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+        scoreBoard();
       }
       else if(e.target.id === 'scissors'){
         console.log(playRound(e.target.id, getComputerChoice()));
         console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+        scoreBoard();
       }
     });
   });
