@@ -49,21 +49,34 @@ function playRound(playerSelection, computerSelection) {
   }
 } 
 
-//This is the main code that will be executed first
+//main
 function game() { 
-  /*for(let i = 1; i <= 5; i++) {
-    const playerChoice = prompt("Enter rock/paper/scissors:", "").toLowerCase();
-    console.log(playRound(playerChoice, getComputerChoice()));
-    console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
-  }
-  */
-  if(playerScore > computerScore) {
+  const buttons = document.querySelectorAll('button');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      if(e.target.id === 'rock'){
+        console.log(playRound(e.target.id, getComputerChoice()));
+        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+      }
+      else if(e.target.id === 'paper'){
+        console.log(playRound(e.target.id, getComputerChoice()));
+        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+      }
+      else if(e.target.id === 'scissors'){
+        console.log(playRound(e.target.id, getComputerChoice()));
+        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+      }
+    });
+  });
+  
+  /*if(playerScore > computerScore) {
     console.log("You Win the game!");
   } else if(playerScore < computerScore) {
     console.log("You Lose the game!");
   } else {
     console.log("Draw!");
-  }
+  }*/
 }
 
 game(); 
