@@ -3,51 +3,34 @@ let computerScore = 0;
 
 function getComputerChoice() {
   const computerChoice = Math.floor((Math.random() * 3));
-
+  
+  const aiWeapon = document.querySelector('#ai-weapon');
   if(computerChoice === 0) {
+    aiWeapon.textContent = '🪨';
     return "rock";
   } else if(computerChoice === 1){
+    aiWeapon.textContent = '📃';
     return "paper";
   } else {
+    aiWeapon.textContent = '✂️';
     return "scissors";
   } 
 }
 
 function playRound(playerSelection, computerSelection) {
   if(playerSelection === "rock") {
-    if(computerSelection === "scissors"){
-      playerScore++;
-      return `You Win! ${playerSelection} beats ${computerSelection}.`;
-    } else if(computerSelection === "paper"){
-      computerScore++;
-      return `You Lose! ${computerSelection} beats ${playerSelection}.`;
-    } else {
-      return `It's a tie! ${computerSelection} tied with ${playerSelection}.`;
-    }
+    if(computerSelection === "scissors")   playerScore++;
+    else if(computerSelection === "paper") computerScore++;                               
+  } 
+  else if(playerSelection === "paper") {
+    if(computerSelection === "scissors")   computerScore++;
+    else if(computerSelection === "rock")  playerScore++;
   }
-  if(playerSelection === "paper") {
-    if(computerSelection === "scissors"){
-      computerScore++;
-      return `You Lose! ${computerSelection} beats ${playerSelection}.`;
-    } else if(computerSelection === "rock"){
-      playerScore++;
-      return `You Win! ${playerSelection} beats ${computerSelection}.`;
-    } else {
-      return `It's a tie! ${playerSelection} tied with ${computerSelection}.`; 
-    }
-  }
-  if(playerSelection === "scissors") {
-    if(computerSelection === "rock"){
-      computerScore++;
-      return `You Lose! ${computerSelection} beats ${playerSelection}.`;
-    } else if(computerSelection === "paper"){
-      playerScore++;
-      return `You Win! ${playerSelection} beats ${computerSelection}.`;
-    } else {
-      return `It's a tie! ${playerSelection} tied with ${computerSelection}.`;
-    }
-  }
-} 
+  else if(playerSelection === "scissors") {
+    if(computerSelection === "rock")       computerScore++;
+    else if(computerSelection === "paper")  playerScore++;
+  }    
+}
 
 function scoreBoard(){
   const score = document.querySelector('.score');
@@ -58,26 +41,35 @@ function scoreBoard(){
 //main
 function game() { 
   const buttons = document.querySelectorAll('button');
+  const playerWeapon = document.querySelector('#player-weapon');
+  
 
   buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
       if(e.target.id === 'rock'){
-        console.log(playRound(e.target.id, getComputerChoice()));
-        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+        playRound(e.target.id, getComputerChoice());
         scoreBoard();
+        playerWeapon.textContent = '🪨';
       }
       else if(e.target.id === 'paper'){
-        console.log(playRound(e.target.id, getComputerChoice()));
-        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+        playRound(e.target.id, getComputerChoice());
         scoreBoard();
+        playerWeapon.textContent = '📃';
       }
       else if(e.target.id === 'scissors'){
-        console.log(playRound(e.target.id, getComputerChoice()));
-        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
+        playRound(e.target.id, getComputerChoice());
         scoreBoard();
+        playerWeapon.textContent = '✂️';
       }
+
+
     });
   });
+
+  
+
+  
+
   
   /*if(playerScore > computerScore) {
     console.log("You Win the game!");
