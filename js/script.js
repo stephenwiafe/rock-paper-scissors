@@ -64,9 +64,35 @@ function declareWinner(){
   const message = document.querySelector('.message');
 
   setTimeout(function(){
-    if(playerScore === 5)       message.textContent = `You Won!!Game Over!!!`;
-    else if(computerScore == 5) message.textContent = `AI WON!!Game Over!!`;
+    if(playerScore === 5){
+      message.textContent = `You Won!!Game Over!!!`;
+      setTimeout(function(){
+        restart();
+      },1000)
+    }       
+    else if(computerScore == 5){
+      message.textContent = `AI WON!!Game Over!!`;
+      setTimeout(function(){
+        restart();
+      },1000)
+    } 
   }, 1000);
+
+
+}
+
+function restart(){
+    let playAgain = confirm("Would you like to play again?");
+
+    if(playAgain === true){
+      playerScore = 0;
+      computerScore = 0;
+      const score = document.querySelector('.score');
+      const message = document.querySelector('.message');
+  
+      score.textContent = `${playerScore}:${computerScore}`;
+      message.textContent = "Choose Weapon!";
+    } 
 }
 
 //main
